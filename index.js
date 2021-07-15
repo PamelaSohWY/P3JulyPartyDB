@@ -23,10 +23,11 @@ app.use (
     })
 );
 
+//import in routes 
+const startingRoutes = require('./routes/starting')
+
 async function main() {
-    app.get('/', (req,res)=>{
-        res.send("working")
-    })
+    app.use('/',startingRoutes)
 }
 
 main();

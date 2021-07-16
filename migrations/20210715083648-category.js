@@ -15,11 +15,14 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return null;
+  return db.createTable('category',{
+    category_id: { type: 'int', primaryKey:true, autoIncrement:true},
+    description:'text'
+})
 };
 
 exports.down = function(db) {
-  return null;
+  return db.dropTable('category');
 };
 
 exports._meta = {

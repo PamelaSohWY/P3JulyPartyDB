@@ -15,34 +15,34 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return db.createTable('partyproducts',{
-    partyproduct_id: {
-      type: 'int', 
-      primaryKey:true, 
-      autoIncrement:true
-    },
-    name:{
-      type:'varchar(250)',
-      notNull:true
-    }, 
-    unit_price:{
-      type:'int',
-      notNull:true
-    }, 
-    description:{
-      type:'text',
-      notNull:true
-    }, 
-    quantity_in_stock:{
-      type:'int',
-      notNull:true
-    },
-    quantity_left:{
-      type:'int', 
-      notNull:true
-    }
+  // return db.createTable('partyproducts',{
+  //   partyproduct_id: {
+  //     type: 'int', 
+  //     primaryKey:true, 
+  //     autoIncrement:true
+  //   },
+  //   name:{
+  //     type:'varchar(250)',
+  //     notNull:true
+  //   }, 
+  //   unit_price:{
+  //     type:'int',
+  //     notNull:true
+  //   }, 
+  //   description:{
+  //     type:'text',
+  //     notNull:true
+  //   }, 
+  //   quantity_in_stock:{
+  //     type:'int',
+  //     notNull:true
+  //   },
+  //   quantity_left:{
+  //     type:'int', 
+  //     notNull:true
+  //   }
 
-  })
+  // })
 };
 
 exports.down = function(db) {
@@ -66,4 +66,3 @@ exports._meta = {
 //       'onUpdate':'RESTRICT'
 //     }
 //   }
-},

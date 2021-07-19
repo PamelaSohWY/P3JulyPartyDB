@@ -29,7 +29,8 @@ const productRoutes = require('./routes/products')
 
 async function main() {
     // app.use('/',startingRoutes);
-    app.use('/', productRoutes)
+    app.use('/', startingRoutes)
+    app.use('/products', productRoutes)
 }
 
 main();

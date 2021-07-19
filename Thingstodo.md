@@ -1,0 +1,1 @@
+1. Edit index in bookshelf to refer to .env

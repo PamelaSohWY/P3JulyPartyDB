@@ -25,9 +25,11 @@ app.use (
 
 //import in routes 
 const startingRoutes = require('./routes/starting')
+const productRoutes = require('./routes/products')
 
 async function main() {
-    app.use('/',startingRoutes)
+    // app.use('/',startingRoutes);
+    app.use('/', productRoutes)
 }
 
 main();

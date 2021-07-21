@@ -37,6 +37,10 @@
                 <td>
                     {{this.quantity_left}}
                 </td>
+                <td>
+                <a href="/products/{{this.partyproducts_id}}/update" class="btn btn-primary btn-sm">Update</a>
+                <a href="/products/{{this.partyproducts_id}}/delete" class="btn btn-danger btn-sm">Delete</a>
+            </td>
             </tr>
         {{/each}}
     </tbody>

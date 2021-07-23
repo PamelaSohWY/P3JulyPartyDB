@@ -47,7 +47,7 @@ router.post('/create', async(req,res)=>{
             res.redirect('/products');
         },
         'error': async (form) => {
-            res.render('products/create', {
+            res.render('partyproducts/create', {
                 'form': form.toHTML(bootstrapField)
             })
         }

@@ -27,7 +27,7 @@ exports.up = function(db) {
       notNull: true
     },
     unit_price: {
-      type:'decimal',
+      type:'float(10,2)',
       notNull: true
     },
     description: {
@@ -45,9 +45,16 @@ exports.up = function(db) {
     quantity_left: {
       type:'int',
       notNull: true
-    }
+    },
+    picture: {
+      type:'text',
+      length:250,
+      notNull: true
+    },
+    
 })
 };
+
 
 exports.down = function(db) {
   return db.dropTable('partyproducts')

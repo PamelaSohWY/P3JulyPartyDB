@@ -1,11 +1,11 @@
 // import in caolan forms 
 const forms = require("forms");
 // create some shortcuts
-const fields= forms.fields;
-const validators = forms.validators;
+const field= forms.fields; // issue with spelling 
+const validators = forms.validators; //issue with spelling
 
 var bootstrapField = function (name,object){
-    if (!Array.isArray(object.widget.classes)) { object.widget.classes = [];}
+    if (!Array.isArray(object.widget.classes)) { object.widget.classes = []}
 
     if (object.widget.classes.indexOf('form-control')=== -1){
         object.widget.classes.push('form-control');
@@ -14,14 +14,14 @@ var bootstrapField = function (name,object){
     var validationclass = object.value && !object.error ? 'is-valid' : '';
     validationclass = object.error ? 'is-invalid' : validationclass;
     if (validationclass){
-        object.widget.classes.push(validationclass);
+        object.widget.classes.push(validationclass)
     }
 
     var label = object.labelHTML(name);
     var error = object.error ? '<div class="invalid-feedback">' + object.error + '</div>': '';
 
     var widget = object.widget.toHTML(name, object);
-    return '<div class = "form-group>' + label + widget + error + '</div>'
+    return '<div class = "form-group">' + label + widget + error + '</div>'
 
 } //end of bootstrap field
 
@@ -30,51 +30,47 @@ var bootstrapField = function (name,object){
 // Create Product Form to define product 
 const createProductForm = () => {
     return forms.create ({
-        'name': fields.string({
+        'name': field.string({
             required:true,
             errorAfterField:true,
             cssClasses:{
               label:['form-label']
             }
         }),
-        'unit_price': fields.string({
-            required:true,
-            errorAfterField:true,
-            cssClasses:{
-              label:['form-label']
-            },
-            'validators':[validators.integer()]
-        }), 
-        'description': fields.string({
+        'unit_price': field.string({
             required:true,
             errorAfterField:true,
             cssClasses:{
               label:['form-label']
             }
         }), 
-        'quantity_in_stock': fields.string({
+        'description': field.string({
             required:true,
             errorAfterField:true,
             cssClasses:{
               label:['form-label']
-            },
-            'validators':[validators.integer()]
+            }
         }), 
-        'quantity_total': fields.string({
+        'quantity_in_stock': field.string({
             required:true,
             errorAfterField:true,
             cssClasses:{
               label:['form-label']
-            },
-            'validators':[validators.integer()]
+            }
         }), 
-        'quantity_left': fields.string({
+        'quantity_total': field.string({
             required:true,
             errorAfterField:true,
             cssClasses:{
               label:['form-label']
-            },
-            'validators':[validators.integer()]
+            }
+        }), 
+        'quantity_left': field.string({
+            required:true,
+            errorAfterField:true,
+            cssClasses:{
+              label:['form-label']
+            }
         }), 
 
     })

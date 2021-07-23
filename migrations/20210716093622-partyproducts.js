@@ -50,6 +50,7 @@ exports.up = function(db) {
       type:'text',
       length:250,
       notNull: true
+      
     },
     
 })
